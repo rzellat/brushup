@@ -3,6 +3,21 @@
 using namespace std; //we work in the standard ref for names
 
 /*
+Function to compute an average
+*/
+double moyenne(double table[], int taille_tableau)
+{
+    double moyenne(0);
+    for(int i(0); i<taille_tableau;i++)
+    {
+        moyenne += table[i];
+    }
+    moyenne = moyenne/taille_tableau;
+    return moyenne;
+}
+
+
+/*
 Main function
 */
 int main()
@@ -26,6 +41,14 @@ int main()
     {
         cout << "You are old enough" << endl;
     }
+
+    int taille_table(2);
+    double notes[taille_table];
+    notes[0]=10;
+    notes[1]=12;
+    double ma_moyenne(0);
+    ma_moyenne = moyenne(notes,taille_table);
+    cout << ma_moyenne << endl;
 
     return 0;
 }
